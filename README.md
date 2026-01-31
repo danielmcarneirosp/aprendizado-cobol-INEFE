@@ -12,3 +12,12 @@
 
 3. Programação COBOL T-2.2025 COBOL com DB2
 
+4. Programação COBOL T-2.2025  COBOL com CICS
+
+> LÓGICA PROCEDURAL E COMANDOS INICIAIS
+
+|Aula 01 | Apostilas |
+|--------|-----------|
+|Apostila 01 | [Material](/home/daniel/DEVELOPER/INEFE/INEFE/LPCIT-MOD1/AULA01_2710/APOSTILA/COBOL  Aula 01.pdf)
+
+
