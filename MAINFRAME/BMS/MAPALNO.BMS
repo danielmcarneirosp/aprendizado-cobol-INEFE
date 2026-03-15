@@ -1,0 +1,38 @@
+MAPALNO  DFHMSD TYPE=&SYSPARM,                                         *
+               LANG=COBOL,                                             *
+               CTRL=(FREEKB,FRSET,ALARM),                              *
+               MODE=INOUT,                                             *
+               STORAGE=AUTO
+*
+MAPALNO  DFHMDI SIZE=(22,80),LINE=1,COLUMN=1,JUSTIFY=(LEFT,FIRST)
+*
+TRANS    DFHMDF POS=(01,01),LENGTH=04,ATTRB=(ASKIP,BRT,FSET),          *
+               INITIAL='CURS'
+SALVA    DFHMDF POS=(01,08),LENGTH=04,ATTRB=(ASKIP,DRK)
+         DFHMDF POS=(01,20),LENGTH=40,ATTRB=(ASKIP,BRT),               *
+               INITIAL='***  EXEMPLO DE DEFINICAO DE MAPSET  ***'
+DIA      DFHMDF POS=(01,70),LENGTH=02,ATTRB=ASKIP,GRPNAME=DATA
+MES      DFHMDF POS=(01,72),LENGTH=02,GRPNAME=DATA
+ANO      DFHMDF POS=(01,74),LENGTH=02,GRPNAME=DATA
+*
+         DFHMDF POS=(05,01),LENGTH=10,ATTRB=ASKIP,INITIAL='COD. ALUNO'
+         DFHMDF POS=(05,15),LENGTH=13,ATTRB=ASKIP,                     *
+               INITIAL='NOME DO ALUNO'
+         DFHMDF POS=(05,39),LENGTH=41,ATTRB=(ASKIP,BRT),               *
+               INITIAL='NOTA1 NOTA2 NOTA3 NOTA4 NOTA5 MEDIA STAT'
+*
+CODAL    DFHMDF POS=(07,01),LENGTH=11,ATTRB=(UNPROT,NUM)
+         DFHMDF POS=(07,13),LENGTH=01,ATTRB=ASKIP,INITIAL=' '
+NOMEAL   DFHMDF POS=(07,21),LENGTH=20,ATTRB=ASKIP
+NOTAS    DFHMDF POS=(07,46),LENGTH=05,ATTRB=ASKIP,OCCURS=5,            *
+               PICOUT='ZZ9,9'
+MEDIA    DFHMDF POS=(07,73),LENGTH=05,ATTRB=ASKIP,                     *
+               PICOUT='ZZ9,9'
+*
+APROV    DFHMDF POS=(07,79),LENGTH=01,ATTRB=ASKIP
+*
+         DFHMDF POS=(22,21),LENGTH=40,ATTRB=(PROT,BRT),                *
+               INITIAL='PF3   RETORNAR                PA2   SAIR'
+*
+         DFHMSD TYPE=FINAL
+         END

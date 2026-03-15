@@ -1,0 +1,16 @@
+000100******************* INICIO DO COPYBOOK ***************************00010003
+001000**************** DATA DIVISION                                    00100003
+001100**************** FILE SECTION                                     00110003
+001200 FILE SECTION.                                                    00120003
+001300*                                                                 00130003
+001400 FD OUTPTFL                                                       00140006
+001500     LABEL RECORDS ARE STANDARD                                   00150003
+001600     BLOCK CONTAINS 27920 CHARACTERS                              00160003
+001700     RECORD CONTAINS 80 CHARACTERS                                00170003
+001800     RECORDING MODE IS F.                                         00180003
+001900***  DATA RECORD IS REG-INPUT.                                    00190003
+002000*                                                                 00200003
+002100 01 REG-INPUT            PIC X(80).                               00210003
+002200*                                                                 00220003
+002300*                                                                 00230003
+002400******************* FIM DO COPYBOOK ******************************00240003

@@ -1,0 +1,32 @@
+************************************************************************
+*******  ESTE COPY BOOK SERA UTILIZADO NO EXERCICIO 002              ***
+************************************************************************
+*******  ARQUIVO QSAM - DADOS CADASTRAIS EMPRESA XPTO                ***
+************************************************************************
+
+       01  REG-FUNC-RH.
+          05  TIPO-REC                    PIC 99.
+          05  REG-NOME-FUN                PIC A(030).
+          05  REG-END-FUN                 PIC X(20).
+          05  REG-CIDADE-FUN              PIC X(20).
+          05  REG-UF-FUN                  PIC A(02).
+          05  REG-CPF-FUN                 PIC X(12).
+          05  FILLER REDEFINES REG-CPF-FUN.
+            10  REG-CPF-INT               PIC 9(09).
+            10  FILLER                    PIC X(01).
+            10  REG-CPF-DIG               PIC 99.
+
+          05  REG-SALARIO-VAL             PIC S9(10)V99 COMP-3.
+          05  REG-SALARIO-BRUTO           PIC S9(10)V99 COMP-3.
+          05  REG-SAL-DESC-INSS           PIC S9(08)V99 COMP-3.
+          05  REG-SAL-DESC-IRPF           PIC S9(08)V99 COMP-3.
+          05  REG-SALARIO-LIQUIDO         PIC S9(10)V99 COMP-3.
+          05  REG-ATIVIDADE               PIC X(20).
+          05 FILLER REDEFINES   REG-ATIVIDADE.
+            10 REG-LOG-DATA               PIC 9(08).
+            10 REG-LOG-HORA               PIC 9(08).
+            10 REG-MATRICULA-FUN          PIC 9(04).
+          05 REG-MATR-EXTENSO             PIC X(50).
+          05 REG-COD-ERRO                 PIC 999.
+          05 REG-LOG-USRID                PIC X(07).
+**************************** FIM DO COPYBOOK ***************************

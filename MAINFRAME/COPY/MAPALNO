@@ -1,0 +1,67 @@
+       01  MAPALNOI.
+           02  FILLER PIC X(12).
+           02  TRANSL    COMP  PIC  S9(4).
+           02  TRANSF    PICTURE X.
+           02  FILLER REDEFINES TRANSF.
+             03 TRANSA    PICTURE X.
+           02  TRANSI  PIC X(4).
+           02  SALVAL    COMP  PIC  S9(4).
+           02  SALVAF    PICTURE X.
+           02  FILLER REDEFINES SALVAF.
+             03 SALVAA    PICTURE X.
+           02  SALVAI  PIC X(4).
+           02  DATAL    COMP  PIC  S9(4).
+           02  DATAF    PICTURE X.
+           02  FILLER REDEFINES DATAF.
+             03 DATAA    PICTURE X.
+           02  DATAI.
+             03  DIAI  PIC X(2).
+             03  MESI  PIC X(2).
+             03  ANOI  PIC X(2).
+           02  CODALL    COMP  PIC  S9(4).
+           02  CODALF    PICTURE X.
+           02  FILLER REDEFINES CODALF.
+             03 CODALA    PICTURE X.
+           02  CODALI  PIC X(11).
+           02  NOMEALL    COMP  PIC  S9(4).
+           02  NOMEALF    PICTURE X.
+           02  FILLER REDEFINES NOMEALF.
+             03 NOMEALA    PICTURE X.
+           02  NOMEALI  PIC X(20).
+           02  NOTASD OCCURS 5 TIMES.
+             03  NOTASL    COMP  PIC  S9(4).
+             03  NOTASF    PICTURE X.
+             03  NOTASI  PIC X(5).
+           02  MEDIAL    COMP  PIC  S9(4).
+           02  MEDIAF    PICTURE X.
+           02  FILLER REDEFINES MEDIAF.
+             03 MEDIAA    PICTURE X.
+           02  MEDIAI  PIC X(5).
+           02  APROVL    COMP  PIC  S9(4).
+           02  APROVF    PICTURE X.
+           02  FILLER REDEFINES APROVF.
+             03 APROVA    PICTURE X.
+           02  APROVI  PIC X(1).
+       01  MAPALNOO REDEFINES MAPALNOI.
+           02  FILLER PIC X(12).
+           02  FILLER PICTURE X(3).
+           02  TRANSO  PIC X(4).
+           02  FILLER PICTURE X(3).
+           02  SALVAO  PIC X(4).
+           02  FILLER PICTURE X(3).
+           02  DATAO.
+             03  DIAO  PIC X(2).
+             03  MESO  PIC X(2).
+             03  ANOO  PIC X(2).
+           02  FILLER PICTURE X(3).
+           02  CODALO  PIC X(11).
+           02  FILLER PICTURE X(3).
+           02  NOMEALO  PIC X(20).
+           02  DFHMS1 OCCURS 5 TIMES.
+             03  FILLER PICTURE X(2).
+             03  NOTASA    PICTURE X.
+             03  NOTASO PIC ZZ9,9.
+           02  FILLER PICTURE X(3).
+           02  MEDIAO PIC ZZ9,9.
+           02  FILLER PICTURE X(3).
+           02  APROVO  PIC X(1).

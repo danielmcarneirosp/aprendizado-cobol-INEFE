@@ -1,0 +1,35 @@
+      ******************************************************************
+      *  ESTE COPY BOOK CONTEM VARIAVEIS DO ARQUIVO VSAM             ***
+      *  ALUNOS, USADO COMO EXEMPLO NO CURSO DE VSAM E CICS          ***
+      *  FB 80 BYTES                                                 ***
+      ******************************************************************
+      *  MATRICULA - NUMERO DE MATRICULA DO ALUNO ( CHAVE PRIMARIA )
+      *  NOME      - NOME DO ALUNO
+      *  SEXO      - SEXO DO ALUNO
+      *  NOTA01    - PRIMEIRA NOTA
+      *  NOTA02    - SEGUNDA  NOTA
+      *  NOTA03    - TERCEIRA NOTA
+      *  NOTA04    - QUARTA NOTA
+      *  NOTA05    - QUINTA NOTA
+      *  MEDIA     - SEXTA NOTA
+      *  APROVACAO - STATUS ÝAPRO¨VADO ÝREPR¨OVADO
+      *
+      ******************************************************************
+       01  REGISTRO-VSAM.                                               00180000
+           03 MATRICULA            PIC  9(11).                          00190000
+              88 ALUNO-NULO            VALUE 0.
+              88 ULTIMO-ALUNO          VALUE 99999999999.
+           03 NOME                 PIC  X(40).                          00200000
+           03 SEXO                 PIC  X(01).
+              88 MASCULINO             VALUE 'M'.
+              88 FEMININO              VALUE 'F'.
+           03 NOTA01               PIC  9(04).
+           03 NOTA02               PIC  9(04).
+           03 NOTA03               PIC  9(04).
+           03 NOTA04               PIC  9(04).
+           03 NOTA05               PIC  9(04).
+           03 MEDIA                PIC  9(04).
+           03 SITUACAO             PIC  X(04).
+              88 APROVADO              VALUE 'APRO'.
+              88 REPROVADO             VALUE 'REPR'.
+**************************** FIM DO COPYBOOK ***************************

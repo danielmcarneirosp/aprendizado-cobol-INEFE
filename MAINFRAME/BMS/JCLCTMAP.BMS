@@ -1,0 +1,67 @@
+//CATMAPA   JOB    ('00'),TSO.&SYSUID,
+//          REGION=4M,NOTIFY=&SYSUID,
+//          MSGCLASS=T,MSGLEVEL=1,CLASS=A
+//*-----------------------------------------------------------------*
+//* COMPILA E LINKEDITA PROGRAMA COBOL CICS
+//* NOVA VERSAO DFH540.CICS SUBSTUIDA PELA DFH560.CICS
+//*-----------------------------------------------------------------*
+//DFHMAPS PROC MAPNAME=MAPS005,              NAME OF MAPSET - REQUIRED
+//             INDEX='DFH410.CICS',      FOR SDFHMAC
+//             MAPLIB='DFH410.CICS',
+//             MACLIB='IBMUSER.WORKBOOK.BMS',
+//             COPY='IBMUSER.WORKBOOK.COPY',
+//             A=,                           A=A FOR ALIGNED MAP
+//*            RMODE=24,                     24/ANY
+//             ASMBLR=ASMA90,                ASSEMBLER PROGRAM NAME
+//             REG=2048K,                    REGION FOR ASSEMBLY
+//             OUTC=*,                       PRINT SYSOUT CLASS
+//             WORK=SYSDA                    WORK FILE UNIT
+//*-----------------------------------------------------------------
+//* EFETUA COPIA DOS FONTES
+//*-----------------------------------------------------------------
+//COPY     EXEC PGM=IEBGENER
+//SYSPRINT DD SYSOUT=&OUTC
+//SYSUT1   DD DSN=&MACLIB(&MAPNAME),DISP=SHR
+//SYSUT2   DD DSN=&&TEMPM,UNIT=&WORK,DISP=(,PASS),
+//            DCB=(RECFM=FB,LRECL=80,BLKSIZE=400),
+//            SPACE=(400,(50,50))
+//SYSIN    DD DUMMY
+//*-----------------------------------------------------------------
+//ASMMAP   EXEC PGM=&ASMBLR,REGION=&REG,
+//  PARM='SYSPARM(&A.MAP),DECK,NOOBJECT'
+//SYSPRINT DD SYSOUT=&OUTC
+//SYSLIB   DD DSN=&INDEX..SDFHMAC,DISP=SHR
+//         DD DSN=SYS1.MACLIB,DISP=SHR
+//SYSUT1   DD UNIT=&WORK,SPACE=(CYL,(5,5))
+//SYSUT2   DD UNIT=&WORK,SPACE=(CYL,(5,5))
+//SYSUT3   DD UNIT=&WORK,SPACE=(CYL,(5,5))
+//SYSPUNCH DD DSN=&&MAP,DISP=(,PASS),UNIT=&WORK,
+//            DCB=(RECFM=FB,LRECL=80,BLKSIZE=400),
+//            SPACE=(400,(50,50))
+//SYSIN    DD DSN=&&TEMPM,DISP=(OLD,PASS)
+//*-----------------------------------------------------------------
+//LINKMAP  EXEC PGM=IEWL,PARM='LIST,LET,XREF,AMODE=31,RMODE=ANY',
+//            COND=(4,LT)
+//SYSPRINT DD SYSOUT=&OUTC
+//SYSLMOD  DD DSN=&MAPLIB..USERLOAD(&MAPNAME),DISP=SHR
+//SYSUT1   DD UNIT=&WORK,SPACE=(1024,(20,20))
+//SYSLIN   DD DSN=&&MAP,DISP=(OLD,DELETE)
+//*-----------------------------------------------------------------
+//* GERAR COPYBOOK AREAS DO MAPA
+//*-----------------------------------------------------------------
+//*------------------------------------------------------------
+//COPBOOK EXEC PGM=&ASMBLR,REGION=&REG,COND=(4,LT),
+// PARM='DECK,NOOBJECT,XREF(SHORT),SYSPARM(DSECT),LIST'
+//SYSPRINT DD SYSOUT=*
+//SYSIN    DD DSN=&MACLIB(&MAPNAME),DISP=SHR
+//SYSPUNCH DD DSN=&COPY(&MAPNAME),DISP=SHR
+//***   SYSLIB   DD DSN=DFH.V3R1M0.CICS.SDFHMAC,DISP=SHR
+//SYSLIB   DD DSN=DFH410.CICS.SDFHMAC,DISP=SHR
+//         DD DSN=SYS1.MACLIB,DISP=SHR,DCB=BLKSIZE=3120
+//SYSUT1   DD UNIT=VIO
+//SYSUT2   DD UNIT=VIO
+//SYSUT3   DD UNIT=VIO
+//*
+// PEND
+/*
+//COBCURSO  EXEC DFHMAPS

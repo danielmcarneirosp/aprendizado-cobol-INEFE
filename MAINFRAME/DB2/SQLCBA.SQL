@@ -1,0 +1,47 @@
+--SET CURRENT SQLID = 'IBMUSER'                                         00001001
+  SELECT * FROM SYSIBM.SYSTABLES                                        00002001
+  WHERE CREATOR = 'INEFE09'       ;                                     00003001
+--WHERE DBNAME = 'DSN00156' ;                                           00004001
+--;                                                                     00009101
+--SELECT A.PROGNAME ,                                                   00009201
+--       A.TNAME    ,                                                   00009301
+--       A.ACCESSTYPE,                                                  00009401
+--       A.MATCHCOLS,                                                   00009501
+--       A.ACCESSNAME,                                                  00009601
+--       B.STMT_TYPE,                                                   00009701
+--       A.QUERYNO,                                                     00009801
+--       B.PROCMS,                                                      00009901
+--       B.PROCSU,                                                      00010001
+--       B.TOTAL_COST                                                   00010101
+--FROM  INEFEXX.PLAN_TABLE A ,                                          00010202
+--      INEFEXX.DSN_STATEMNT_TABLE B                                    00010302
+--WHERE                                                                 00010401
+--     (A.QUERYNO = XXXX AND                                            00010502
+--      B.QUERYNO = XXXX)                                               00010602
+--;                                                                     00010701
+--SET CURRENT SQLID = 'IBMUSER'                                         00011000
+  SELECT * FROM SYSIBM.SYSTABLES                                        00020000
+  WHERE CREATOR = 'INEFE09'       ;                                     00030000
+--WHERE DBNAME = 'DSN00156' ;                                           00040000
+--SELECT COUNT(*) FROM INEFE00.ALUNOST1 ;                               00050000
+--SELECT * FROM SYSIBM.SYSTABLEPART                                     00060000
+--WHERE DBNAME = 'DSN00XXX' ;                                           00070002
+--SELECT * FROM SYSIBM.SYSCOLUMNS                                       00080000
+--WHERE TBNAME =    'ALUNOST1' ;                                        00090000
+--;                                                                     00100000
+--SELECT A.PROGNAME ,                                                   00110000
+--       A.TNAME    ,                                                   00120000
+--       A.ACCESSTYPE,                                                  00130000
+--       A.MATCHCOLS,                                                   00140000
+--       A.ACCESSNAME,                                                  00150000
+--       B.STMT_TYPE,                                                   00160000
+--       A.QUERYNO,                                                     00170000
+--       B.PROCMS,                                                      00180000
+--       B.PROCSU,                                                      00190000
+--       B.TOTAL_COST                                                   00200000
+--FROM  INEFE00.PLAN_TABLE A ,                                          00210000
+--      INEFE00.DSN_STATEMNT_TABLE B                                    00220000
+--WHERE                                                                 00230000
+--     (A.QUERYNO = 0025 AND                                            00240000
+--      B.QUERYNO = 0025)                                               00250000
+--;                                                                     00260000

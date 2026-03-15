@@ -1,0 +1,10 @@
+000100******************* INICIO DO COPYBOOK ***************************00010003
+000200**************** ENVIRONMENT DIVISION                             00020003
+000300**************** FILE CONTROL                                     00030003
+000400 FILE-CONTROL.                                                    00040003
+000500     SELECT OUTPTFL    ASSIGN TO OUTPTFL                          00050003
+000600     ORGANIZATION IS SEQUENTIAL                                   00060003
+000700     ACCESS MODE IS SEQUENTIAL                                    00070003
+000800     FILE STATUS IS FS-STATUS.                                    00080003
+000900                                                                  00090003
+000910*********************** FIM DO COPYBOOK **************************00091006
